@@ -38,7 +38,15 @@
 <script>
   const triggers = document.querySelectorAll('a');
   const highlight = document.createComment('span');
-  highlight.classList.add('highlight')
+  highlight.classList.add('highlight');
+  document.body.append('highlight');
+  function highlightLink(){
+    const linkCoord = this.getBoundingClientRect();
+    highlight.style.width =`${linkCoord.width}px`
+    highlight.style.width =`${linkCoord.width}px`
+  }
+
+  triggers.forEach(a=>a.addEventListener('mouseenter', highlightLink))
 </script>
 
   </body>
